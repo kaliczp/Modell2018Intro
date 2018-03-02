@@ -34,6 +34,6 @@ vignettes/*.pdf
 
 .Ruserdata
 my.R
-.Rproj
+*.Rproj
 .Rproj.user
 Fomes2018.Rproj
