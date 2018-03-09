@@ -15,3 +15,6 @@ quantile(t1)
 mean(t1,trim=.1)
 
 t2 = c(t1, 4)
+
+summary(t2)
+mean(t2,trim=.1)
