@@ -14,4 +14,4 @@ quantile(t1)
 ## Trimmelt átlag
 mean(t1,trim=.1)
 
-t1 = c(t1, 4)
+t2 = c(t1, 4)
