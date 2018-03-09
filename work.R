@@ -10,3 +10,8 @@ median(t1)
 min(t1)
 max(t1)
 quantile(t1)
+
+## Trimmelt átlag
+mean(t1,trim=.1)
+
+t1 = c(t1, 4)
