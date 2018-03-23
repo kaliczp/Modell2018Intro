@@ -26,7 +26,25 @@ quantile(t1,0.11)
 qqnorm(t1)
 
 ## Testreszabás
-qqnorm(t1, main="", xlab="Elméleti kvantilisek", ylab="Minta kvantilisek")
+par(las=1)
+qqnorm(t1, main="",
+       xlab="Elméleti kvantilisek",
+       ylab="Minta kvantilisek",
+       col=2)
 ?plot #Információ az alap paraméterekről
-qqline(t1)
 abline(0,1, col="lightgray", lwd=2)
+qqline(t1)
+## Koordináta értékek leolvasása
+## identify()
+locator(1)
+text(0.69,0.47,"a")
+
+qqnorm(t1, main="",
+       xlab="Elméleti kvantilisek",
+       ylab="Minta kvantilisek",
+       col=2)
+abline(0,1, col="lightgray", lwd=2)
+qqline(t1)
+legend("topleft",legend=c("qqline","1:1 mer. egyenes"),
+       lwd=c(1,2),
+       col=c("black","lightgray"))
