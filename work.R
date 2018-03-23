@@ -56,3 +56,14 @@ qqline(t1)
 teszt <- rnorm(10)
 qqnorm(teszt,main="", xlab="",ylab="")
 qqline(teszt)
+
+## Több kontroll ábra
+par(mfrow=c(3,3), mar=c(2.1,2.4,0.1,0.1))
+qqnorm(t1,main="", xlab="",ylab="")
+qqline(t1, col=2)
+## Adat generálás
+for(i in 1:7) {
+  teszt <- rnorm(10)
+  qqnorm(teszt,main="", xlab="",ylab="")
+  qqline(teszt)
+}
