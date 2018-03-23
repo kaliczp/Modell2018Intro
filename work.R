@@ -49,10 +49,10 @@ legend("topleft",legend=c("qqline","1:1 mer. egyenes"),
        lwd=c(1,2),
        col=c("black","lightgray"))
 
-par(mfrow=c(2,1))
-qqnorm(t1)
+par(mfrow=c(2,1), mar=c(2.1,2.1,0.1,0.1))
+qqnorm(t1,main="", xlab="",ylab="")
 qqline(t1)
 ## Adat generálás
 teszt <- rnorm(10)
-qqnorm(teszt)
+qqnorm(teszt,main="", xlab="",ylab="")
 qqline(teszt)
