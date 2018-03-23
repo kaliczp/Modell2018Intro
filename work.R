@@ -48,3 +48,11 @@ qqline(t1)
 legend("topleft",legend=c("qqline","1:1 mer. egyenes"),
        lwd=c(1,2),
        col=c("black","lightgray"))
+
+par(mfrow=c(2,1))
+qqnorm(t1)
+qqline(t1)
+## Adat generálás
+teszt <- rnorm(10)
+qqnorm(teszt)
+qqline(teszt)
