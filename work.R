@@ -21,3 +21,6 @@ mean(t2,trim=.1)
 
 quantile()
 quantile(t1,0.11)
+
+## Q-Q plot
+qqnorm(t1)
