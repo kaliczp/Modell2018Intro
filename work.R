@@ -24,3 +24,7 @@ quantile(t1,0.11)
 
 ## Q-Q plot
 qqnorm(t1)
+
+## Testreszabás
+qqnorm(t1, main="", xlab="Elméleti kvantilisek", ylab="Minta kvantilisek")
+?plot #Információ az alap paraméterekről
