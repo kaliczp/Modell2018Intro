@@ -28,3 +28,5 @@ qqnorm(t1)
 ## Testreszabás
 qqnorm(t1, main="", xlab="Elméleti kvantilisek", ylab="Minta kvantilisek")
 ?plot #Információ az alap paraméterekről
+qqline(t1)
+abline(0,1, col="lightgray", lwd=2)
