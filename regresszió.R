@@ -38,3 +38,7 @@ a.df = data.frame(x, y)
 a.df$y = a.df$y + rnorm(20000)
 
 plot(y ~ x, a.df)
+a.lm = lm(y ~ x, a.df)
+abline(a.lm, col=2)
+summary(a.lm)
+plot(a.lm)
