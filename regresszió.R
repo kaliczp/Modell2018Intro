@@ -35,5 +35,6 @@ var.test(x,y)
 y = 2*x
 
 a.df = data.frame(x, y)
+a.df$y = a.df$y + rnorm(20000)
 
-plot(a.df)
+plot(y ~ x, a.df)
