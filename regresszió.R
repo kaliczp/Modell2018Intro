@@ -7,4 +7,7 @@ hist(x, col=2)
 hist(x, col="#d7301f")
 hist(x, col="red")
 
+hist(x, col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
+
+hist(x, "Scott",col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
 y = 2*x
