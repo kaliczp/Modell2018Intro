@@ -33,3 +33,7 @@ var.test(x,x1)
 var.test(x,y)
 
 y = 2*x
+
+a.df = data.frame(x, y)
+
+plot(a.df)
