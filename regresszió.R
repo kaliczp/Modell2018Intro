@@ -10,4 +10,12 @@ hist(x, col="red")
 hist(x, col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
 
 hist(x, "Scott",col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
+
+hist(x, 8,col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
+
+hist(x, -1:8,col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
+
+hist(x, c(-1,3,5,8),col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
+
+
 y = 2*x
