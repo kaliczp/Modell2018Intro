@@ -17,5 +17,19 @@ hist(x, -1:8,col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
 
 hist(x, c(-1,3,5,8),col="#d7301f", main="",xlab="Konc.", ylab="Gyakoriság")
 
+hist(x, freq=F)
+
+x.dens=density(x)
+
+lines(x.dens)
+
+# Hipotézis vizsgálat
+x1 = rnorm(500,4)
+mean(x);mean(x1)
+t.test(x,y)
+t.test(x,x1,var.equal = T)
+
+var.test(x,x1)
+var.test(x,y)
 
 y = 2*x
