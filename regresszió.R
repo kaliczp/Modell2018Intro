@@ -72,3 +72,8 @@ plot(fitted(a.lm),resid(a.lm))
 a.lm.sum = summary(a.lm)
 #R^2 meghatározottsági együttható
 a.lm.sum$r.squared
+
+# Korreláció kovariancia
+cor(a.df$x,a.df$y)
+cor(a.df)
+cov(a.df$x,a.df$y)
