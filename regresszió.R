@@ -52,3 +52,9 @@ plot(a.lm)
 a2.lm = lm(y ~ x - 1 , a.df)
 abline(a2.lm, col=3)
 summary(a2.lm)
+
+# lm objektum, lista
+names(a.df)
+a.lm$coefficients
+(a.lm$coefficients)["x"]
+boxplot(a.lm$residuals)
