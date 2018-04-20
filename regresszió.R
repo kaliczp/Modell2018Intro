@@ -58,3 +58,7 @@ names(a.df)
 a.lm$coefficients
 (a.lm$coefficients)["x"]
 boxplot(a.lm$residuals)
+
+a.lst = list(a=1,b="a",c=1:10)
+a.lst$a
+names(a.lst)
