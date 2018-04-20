@@ -47,3 +47,8 @@ a.lm = lm(y ~ x, a.df)
 abline(a.lm, col=2)
 summary(a.lm)
 plot(a.lm)
+
+## Nincs tengelymetszet
+a2.lm = lm(y ~ x - 1 , a.df)
+abline(a2.lm, col=3)
+summary(a2.lm)
