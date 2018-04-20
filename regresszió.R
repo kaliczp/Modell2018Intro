@@ -37,6 +37,11 @@ y = 2*x
 a.df = data.frame(x, y)
 a.df$y = a.df$y + rnorm(20000)
 
+# Felfedező adatelemzés
+summary(a.df)
+boxplot(a.df)
+IQR(a.df$y)
+
 plot(y ~ x, a.df)
 a.lm = lm(y ~ x, a.df)
 abline(a.lm, col=2)
