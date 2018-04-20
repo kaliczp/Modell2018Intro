@@ -62,3 +62,13 @@ boxplot(a.lm$residuals)
 a.lst = list(a=1,b="a",c=1:10)
 a.lst$a
 names(a.lst)
+
+## Modell kezelése
+coef(a.lm)
+coef(a.lm)[1]
+
+boxplot(resid(a.lm))
+plot(fitted(a.lm),resid(a.lm))
+a.lm.sum = summary(a.lm)
+#R^2 meghatározottsági együttható
+a.lm.sum$r.squared
