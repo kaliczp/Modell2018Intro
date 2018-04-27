@@ -37,3 +37,4 @@ my.R
 *.Rproj
 .Rproj.user
 Fomes2018.Rproj
+*csv

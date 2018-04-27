@@ -1,0 +1,1 @@
+## https://data.giss.nasa.gov/gistemp/ az adatok forrása
