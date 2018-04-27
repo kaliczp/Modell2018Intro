@@ -13,3 +13,5 @@ temp.lowess5 <- lowess(temp.df,f=1/28)
 lines(temp.lowess5, col=2)
 ## Regresszió
 temp.reg <- lm(t ~ ido, temp.df)
+abline(temp.reg,col=3)
+plot(temp.reg)
