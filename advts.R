@@ -143,3 +143,11 @@ zaj <- rnorm(length(co2.maradek),mean(co2.maradek),sd(co2.maradek))
 plot(ts(zaj))
 acf(zaj)
 
+## Szennyvíz spektrum
+szv2.stl <- stl(szv2.ts,"period")
+szv2.trend = szv2.stl$time[,2]
+## Trendmentesítés
+szv2.dt=szv2.ts-szv2.trend
+## A spektrum elemzése
+szv2.spr <- spectrum(szv2.dt)
+
