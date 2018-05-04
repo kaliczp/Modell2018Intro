@@ -45,4 +45,14 @@ names(co2.dec)
 window(co2.dec$trend,1970,1970.5)
 ##A mozgóátlagolású trend mentes sor
 co2.notr <- co2 - co2.dec$trend
+plot(co2.notr)
 boxplot(co2.notr ~ cycle(co2.notr))
+
+## Az előző ábra csinosítása
+lines(1:12,apply(matrix(co2.notr,nr=12),1,function(x){median(x,na.rm=T)}),lwd=2)
+boxplot(co2.notr ~ cycle(co2.notr),col="blue",add=T,xlab="Hónap",ylab="Eltérés a trendtől [ppm]")
+
+### Nem biztos, hogy ez a hozam!!!!
+szv <- scan("szennyv.txt")
+tt2time <- seq(ISOdatetime(2007,4,10,13,46,00),ISOdatetime(2007,4,20,00,24,00),by="2 mins")
+plot(data.frame(tt2time,szv))
