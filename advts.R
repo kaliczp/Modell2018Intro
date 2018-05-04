@@ -150,4 +150,5 @@ szv2.trend = szv2.stl$time[,2]
 szv2.dt=szv2.ts-szv2.trend
 ## A spektrum elemzése
 szv2.spr <- spectrum(szv2.dt)
+szv2.spr <- spectrum(szv2.dt, xlim=c(0,30))
 
