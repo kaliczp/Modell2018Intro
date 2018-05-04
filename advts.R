@@ -95,9 +95,29 @@ co2.loe
 plot(co2.loe$time[,3])
 acf(co2.loe$time[,3])
 
+
+
 ## Szennyvízre
 szv2.loe <- stl(szv2.ts,"per")
 plot(szv2.loe)
 
 ##Spline simítás
 plot(co2)
+lines(smooth.spline(time(co2),co2),col=2)
+lines(smooth.spline(time(co2),co2,spar=.5))
+
+co2.dt.ma12=co2-co2.ma12
+##A mozgóátlag az idősor kezdetén és végén nem értelmezett:
+round(window(co2.dt.ma12,1959,1961),2) #Ablak függvény
+co2.dt=na.omit(co2.dt.ma12) ##Az adathiányok eltüntetése
+plot(co2.dt)
+
+## Trend előállítása lokális regresszióval
+co2.stl <- stl(co2,"period")
+co2.trend = co2.stl$time[,2]
+## Trendmentesítés
+co2.dt=co2-co2.trend
+## A spektrum elemzése
+spectrum(co2.dt)
+## Ha a spektrum skála (y tengely) nem logaritmikus:
+spectrum(co2.dt,log="no")
