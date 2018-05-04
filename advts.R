@@ -152,3 +152,26 @@ szv2.dt=szv2.ts-szv2.trend
 szv2.spr <- spectrum(szv2.dt)
 szv2.spr <- spectrum(szv2.dt, xlim=c(0,30))
 
+## Autoregresszív modellek
+##Autoregresszív modellek
+szv=ts(scan("tisztit.txt"))
+
+plot(szv)
+lag.plot(szv,lags=4,layout=c(2,2),do.lines=F)
+
+acf(szv)
+pacf(szv)
+
+ar(szv)
+ar(szv,order.max=1) #AR(1)
+szv.ar.m=arima(szv,c(1,0,0)) #AR(1)
+plot(szv.ar.m$resid) #Maradékok
+qqnorm(szv.ar.m$resid);qqline(szv.ar.m$resid)
+arima(szv,c(2,0,0)) #AR(2)=ARIMA(2,0,0)
+arima(szv,c(1,0,1)) #ARMA(1,1)=ARIMA(1,0,1)
+(szv.ar.m=arima(szv,c(2,2,2))) #ARIMA(2,2,2)
+tsdiag(szv.ar.m)
+acf(rnorm(70)) #Normális fehérzaj
+plot.ts(rnorm(70)) #Fehérzaj ábra
+
+
