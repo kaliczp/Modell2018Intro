@@ -119,7 +119,17 @@ co2.stl <- stl(co2,"period")
 co2.trend = co2.stl$time[,2]
 ## Trendmentesítés
 co2.dt=co2-co2.trend
+plot(co2.dt)
 ## A spektrum elemzése
 spectrum(co2.dt)
 ## Ha a spektrum skála (y tengely) nem logaritmikus:
 spectrum(co2.dt,log="no")
+
+## Több lépésben simított spektrum
+spectrum(co2.dt,spans=c(3,3))
+## Különböző ablakszélességgel simított spektrum és az adatok kezelése
+co2.spec=spectrum(co2.dt,spans=c(9,7,5))
+names(co2.spec) #Lista elemek
+co2.spec$freq[1:50]
+plot(co2.spec$freq,co2.spec$spec,type="l")
+
