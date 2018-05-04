@@ -133,3 +133,13 @@ names(co2.spec) #Lista elemek
 co2.spec$freq[1:50]
 plot(co2.spec$freq,co2.spec$spec,type="l")
 
+## Véletlen komponens
+co2.maradek = co2.stl$time[,3]
+plot(co2.maradek)
+## Autokorreláció
+acf(co2.maradek)
+## Fehér zaj, korrelálatlan idősor azonos hosszúságú, mint a maradék
+zaj <- rnorm(length(co2.maradek),mean(co2.maradek),sd(co2.maradek))
+plot(ts(zaj))
+acf(zaj)
+
