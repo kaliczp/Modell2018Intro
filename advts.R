@@ -95,7 +95,8 @@ co2.loe
 plot(co2.loe$time[,3])
 acf(co2.loe$time[,3])
 
-
+## Fehér zaj autokorrelogramm
+acf(rnorm(100))
 
 ## Szennyvízre
 szv2.loe <- stl(szv2.ts,"per")
@@ -107,6 +108,7 @@ lines(smooth.spline(time(co2),co2),col=2)
 lines(smooth.spline(time(co2),co2,spar=.5))
 
 co2.dt.ma12=co2-co2.ma12
+plot(co2.dt.ma12)
 ##A mozgóátlag az idősor kezdetén és végén nem értelmezett:
 round(window(co2.dt.ma12,1959,1961),2) #Ablak függvény
 co2.dt=na.omit(co2.dt.ma12) ##Az adathiányok eltüntetése
