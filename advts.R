@@ -37,3 +37,12 @@ lines(co2.ma12,col=3)
 ##Dekompozíció mozgóátlaggal
 co2.dec <- decompose(co2)
 plot(co2.dec)
+
+class(co2.dec) ##Objektum oszálya
+class(co2)
+str(co2.dec) ##Az objektum szerkezete
+names(co2.dec)
+window(co2.dec$trend,1970,1970.5)
+##A mozgóátlagolású trend mentes sor
+co2.notr <- co2 - co2.dec$trend
+boxplot(co2.notr ~ cycle(co2.notr))
