@@ -69,8 +69,14 @@ plot(szv.zoo)
 szvax <- as.POSIXct(paste0("2007-04-",11:19," 0:0:0"))
 axis(1,at=szvax, tck=1, lab=F)
 
+library(xts)
 szv.xts <- as.xts(szv.zoo)
 szv2.xts <- szv.xts['2007-04-11/2007-04-19']
 szv2.ts <- ts(as.numeric(szv2.xts),frequ=720)
 szv2.dec <- decompose(szv2.ts)
 
+## stl loess
+plot(co2)
+##Lokális regresszió ?lowess
+lines(lowess(co2),col=4)
+lines(lowess(co2,f=1/5),col=5,lwd=2)
