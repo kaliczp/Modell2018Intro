@@ -71,12 +71,33 @@ axis(1,at=szvax, tck=1, lab=F)
 
 library(xts)
 szv.xts <- as.xts(szv.zoo)
+plot(szv.xts)
 szv2.xts <- szv.xts['2007-04-11/2007-04-19']
+plot(szv2.xts)
+szv3.xts <- szv.xts['2007-04-11']
+plot(szv3.xts)
+
 szv2.ts <- ts(as.numeric(szv2.xts),frequ=720)
 szv2.dec <- decompose(szv2.ts)
+plot(szv2.dec)
 
 ## stl loess
 plot(co2)
 ##Lokális regresszió ?lowess
 lines(lowess(co2),col=4)
 lines(lowess(co2,f=1/5),col=5,lwd=2)
+
+##Dekompozíció -- loess
+co2.loe=stl(co2,"per") #Szezonális dekompozíció a loess eljárással
+?loess
+plot(co2.loe)
+co2.loe
+plot(co2.loe$time[,3])
+acf(co2.loe$time[,3])
+
+## Szennyvízre
+szv2.loe <- stl(szv2.ts,"per")
+plot(szv2.loe)
+
+##Spline simítás
+plot(co2)
