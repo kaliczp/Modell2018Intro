@@ -9,3 +9,8 @@ lines(t.tsf,col=2,lwd=2)
 
 t.tsf9 <- filter(t.ts,rep(1/9,9))
 lines(t.tsf9,col=3,lwd=2)
+
+##Elcsúszás mentes páros ablakszélesség
+t.tsf <- filter(t.ts,c(1/8,rep(1/4,3),1/8))
+lines(t.tsf,col=4,lwd=2)
+
