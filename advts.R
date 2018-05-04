@@ -59,3 +59,7 @@ plot(data.frame(tt2time,szv))
 
 szv.ts <- ts(szv, freq = 24*30)
 plot(szv.ts) # 2 perces mintavételezés
+
+szv.dec <- decompose(szv.ts)
+plot(szv.dec)
+
