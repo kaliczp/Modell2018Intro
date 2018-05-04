@@ -33,3 +33,8 @@ lines(co2,lwd=2)
 ##Trend idősor nemparamétere szűrővel
 co2.ma12=filter(co2,c(1/24,rep(1/12,11),1/24)) #Mozgó átlag 12 e. ablak
 lines(co2.ma12,col=3)
+
+##Trend idősor nemparamétere szűrővel
+co2.ma12=filter(co2,c(1/24,rep(1/12,11),1/24)) #Mozgó átlag 12 e. ablak
+lines(co2.ma12,col=3)
+
