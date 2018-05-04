@@ -63,3 +63,14 @@ plot(szv.ts) # 2 perces mintavételezés
 szv.dec <- decompose(szv.ts)
 plot(szv.dec)
 
+library(zoo)
+szv.zoo <- zoo(szv, tt2time)
+plot(szv.zoo)
+szvax <- as.POSIXct(paste0("2007-04-",11:19," 0:0:0"))
+axis(1,at=szvax, tck=1, lab=F)
+
+szv.xts <- as.xts(szv.zoo)
+szv2.xts <- szv.xts['2007-04-11/2007-04-19']
+szv2.ts <- ts(as.numeric(szv2.xts),frequ=720)
+szv2.dec <- decompose(szv2.ts)
+
