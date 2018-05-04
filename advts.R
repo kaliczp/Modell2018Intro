@@ -56,3 +56,6 @@ boxplot(co2.notr ~ cycle(co2.notr),col="blue",add=T,xlab="Hónap",ylab="Eltéré
 szv <- scan("szennyv.txt")
 tt2time <- seq(ISOdatetime(2007,4,10,13,46,00),ISOdatetime(2007,4,20,00,24,00),by="2 mins")
 plot(data.frame(tt2time,szv))
+
+szv.ts <- ts(szv, freq = 24*30)
+plot(szv.ts) # 2 perces mintavételezés
